@@ -1,0 +1,195 @@
+/* Fondo */
+body {
+    background-color: #f3dfcf;
+    text-align: center;
+    font-family: 'Indie Flower', cursive, sans-serif;
+}
+
+/* Título */
+h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+/* Contenedor del GIF */
+
+
+.gif-container img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.gif-container2 img {
+    width: 150px; /* Ajusta el tamaño según necesites */
+}
+
+.gif-flores, .gif-flores2 {
+    position: absolute;
+    bottom: 0;
+    width: 400px;  /* Ajusta el tamaño según necesites */
+    height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+.gif-flores {
+    left: 0px;  /* Coloca el gif a la izquierda con un margen */
+}
+
+.gif-flores2 {
+    right: 0px;  /* Coloca el gif a la derecha con un margen */
+}
+
+/* Media Query para pantallas móviles */
+@media screen and (max-width: 768px) {
+    .gif-flores, .gif-flores2 {
+        width: 50px; /* Ajusta el tamaño de los GIFs para pantallas pequeñas */
+    }
+}
+.gif-flores img {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.gif-flores2 img {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Pie de página */
+.footer {
+    position: relative; /* Permite que la sección fluya después del GIF */
+    margin-top: 30px; /* Ajusta el espacio entre el GIF y las notas */
+    width: 60%; /* Para que no ocupe toda la pantalla */
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Navegación de notas */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-buttons p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.left-arrow, .right-arrow {
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Fecha */
+.date {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#nota {
+    opacity: 1; /* Totalmente visible por defecto */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+}
+
+
+/* Estilo del gif que aparece en toda la pantalla */
+#overlay {
+    display: none;  /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);  /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;  /* Inicialmente visible */
+    transition: opacity 0.5s ease, filter 0.5s ease;  /* Animación suave de opacidad y desenfoque */
+}
+
+
+#fullGif {
+    width: 100vw;      /* Ancho del 100% del viewport */
+    height: 100vh;     /* Alto del 100% del viewport */
+    object-fit: contain;  /* Mantiene la proporción del GIF */
+    border: none;  /* Puedes eliminar el contorno si lo prefieres */
+    border-radius: 0;  /* Sin bordes redondeados */
+}
+
+
+/* Animación de entrada */
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Comienza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+#content {
+    display: none;  /* Inicialmente oculto */
+    animation: fadeInFromBottom 1s ease-out forwards;  /* Aparece con animación */
+}
+
+/* Restante del CSS, incluyendo pantalla de contraseña */
+.password-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 10000;
+}
+
+#passwordInput {
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #0bc411de;
+    color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#errorMessage {
+    margin-top: 20px;
+    display: none;
+}

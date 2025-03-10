@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de inicio con contraseña -->
+    <div class="gif-containerpassword">
+        <img src="https://media.tenor.com/hntaRSA-eK8AAAAi/walking-in-the-snow-snoopy.gif" id="snopycon">
+    </div>
+
+    <div id="passwordScreen" class="password-screen">
+        <h2>Adivina la contraseña</h2>
+        <input type="password" id="passwordInput" placeholder="Contraseña" />
+        <button onclick="checkPassword()">Entrar</button>
+        <p id="errorMessage" style="color: red; display: none;">No es la contraseña babas.</p>
+    </div>
+
+    <!-- El contenido bloqueado -->
+    <div id="content" style="display: none;">
+        <h1>Audry</h1>
+
+        <div class="gif-container">
+            <img src="https://media.tenor.com/BhIcggFeFDMAAAAi/blow-kiss-kiss.gif" id="gifcorazon">
+        </div>
+
+        <!-- Contenedor de notas -->
+        <div class="footer">
+            <div class="nav-buttons">
+                <span class="left-arrow" onclick="cambiarNota(-1)">↩</span>
+                <p id="nota">Te amo</p>
+                <span class="right-arrow" onclick="cambiarNota(1)">↪</span>
+            </div>
+            <p class="date">3 / 10 / 2025</p>
+        </div>
+        <div class="aklan">
+            <p id="yo">Alan te ama mucho</p>
+        </div>
+
+        <div class="gif-container2">
+            <img src="https://media.tenor.com/1CKscM4RI9gAAAAi/snoopy.gif" alt="GIF animado">
+        </div>
+
+        <div class="gif-flores">
+            <img src="https://kayletter.devaydren.com/flowers/sunflower.gif" alt="GIF animado">
+        </div>
+
+        <div class="gif-flores2">
+            <img src="https://kayletter.devaydren.com/flowers/sunflower.gif" alt="GIF animado">
+        </div>
+
+        <div id="overlay" class="overlay">
+            <img src="https://media.tenor.com/HWnxshGvOV4AAAAi/kiss-blow-kiss.gif" alt="Gif grande" id="fullGif" />
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Conectamos el JavaScript -->
+</body>
+</html>

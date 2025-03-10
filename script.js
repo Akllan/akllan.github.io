@@ -1,6 +1,6 @@
 // Contraseña correcta (puedes cambiarla a lo que desees)
 // Contraseña correcta
-const correctPassword = "loco";
+const correctPassword = "teamomugrosa";
 
 function checkPassword() {
     const passwordInput = document.getElementById("passwordInput").value;

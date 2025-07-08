@@ -1,0 +1,342 @@
+/* Estilos del Chat Estilo Instagram Live */
+
+/* Contenedor de mensajes flotantes */
+#liveMessagesContainer {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 999;
+    pointer-events: none;
+    max-height: 60vh;
+    overflow: hidden;
+}
+
+/* Mensajes individuales */
+.live-message {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    max-width: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    animation: slideInFromBottom 0.5s ease forwards;
+    pointer-events: auto;
+}
+
+.live-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.live-message.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+/* Contenido del mensaje */
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.message-text {
+    color: white;
+    font-size: 14px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Estilos especiales por tipo de mensaje */
+.live-message.system {
+    background: rgba(52, 152, 219, 0.8);
+}
+
+.live-message.user {
+    background: rgba(231, 76, 60, 0.8);
+    margin-left: auto;
+}
+
+.live-message.auto {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.live-message.saved-user {
+    background: rgba(155, 89, 182, 0.8);
+    border-left: 3px solid #9b59b6;
+}
+
+/* Contenedor del chat input */
+#liveChatContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+#chatInputArea {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+#chatMessageInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 8px 0;
+    color: #333;
+}
+
+#chatMessageInput::placeholder {
+    color: #999;
+}
+
+#sendMessageBtn, #likeBtn {
+    background: #e74c3c;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#likeBtn {
+    background: #ff1744;
+    margin-left: 5px;
+}
+
+#sendMessageBtn:hover, #likeBtn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+#likeBtn:hover {
+    background: #d50000;
+}
+
+#sendMessageBtn:active, #likeBtn:active {
+    transform: scale(0.95);
+}
+
+/* Animaciones */
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    #liveMessagesContainer {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        max-height: 50vh;
+    }
+    
+    .live-message {
+        max-width: 250px;
+        padding: 6px 12px;
+    }
+    
+    .username {
+        font-size: 11px;
+    }
+    
+    .message-text {
+        font-size: 13px;
+    }
+    
+    #liveChatContainer {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    #chatInputArea {
+        padding: 6px 12px;
+    }
+    
+    #chatMessageInput {
+        font-size: 13px;
+        padding: 6px 0;
+    }
+    
+    #sendMessageBtn, #likeBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .floating-heart {
+        font-size: 18px;
+    }
+
+    .like-notification {
+        font-size: 11px;
+        right: 10px;
+    }
+}
+
+/* Efectos especiales para mensajes de Alfonso y Gery */
+.live-message:has(.username[style*="ff6b6b"]) {
+    border-left: 3px solid #ff6b6b;
+}
+
+.live-message:has(.username[style*="4ecdc4"]) {
+    border-left: 3px solid #4ecdc4;
+}
+
+/* Efecto de typing indicator (opcional) */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 0;
+}
+
+.typing-dot {
+    width: 4px;
+    height: 4px;
+    background: #999;
+    border-radius: 50%;
+    animation: typingDots 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingDots {
+    0%, 60%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Contenedor de corazones flotantes */
+#floatingHeartsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 998;
+    overflow: hidden;
+}
+
+/* Corazones flotantes */
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    transition: all 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 998;
+    animation: heartFloat 3s ease-out forwards;
+}
+
+/* Notificaciones de likes */
+.like-notification {
+    animation: likeNotificationPop 0.3s ease-out;
+    color: #e74c3c;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Animaciones para corazones */
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-50vh) translateX(-20px) rotate(180deg) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) translateX(-40px) rotate(360deg) scale(0.5);
+    }
+}
+
+@keyframes likeNotificationPop {
+    0% {
+        transform: translateY(-50%) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Efectos especiales para corazones */
+.floating-heart:nth-child(odd) {
+    animation-duration: 2.5s;
+    font-size: 20px;
+}
+
+.floating-heart:nth-child(even) {
+    animation-duration: 3.5s;
+    font-size: 28px;
+}
+
+.floating-heart:nth-child(3n) {
+    animation-duration: 3s;
+    font-size: 22px;
+}

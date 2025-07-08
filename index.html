@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<title>💕 Código del Amor - Audry & Alan</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<link href="css/chat-styles.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/chat-system.js"></script>
+
+</head>
+
+<body>
+
+<!-- Menú Hamburguesa -->
+<div id="hamburgerMenu">
+	<div class="hamburger-icon" id="hamburgerIcon">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<nav id="navigationMenu" class="nav-menu">
+		<ul>
+			<li><a href="index.html" class="active">💕 Código del Amor</a></li>
+			<li><a href="2pagina/index.html">🔐 Página de Audry</a></li>
+			<li><a href="#" onclick="testAnniversaryAnimation(3)">🎉 Probar Animación</a></li>
+		</ul>
+	</nav>
+</div>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*EL CÓDIGO DEL AMOR</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Hola Audry<br />
+			¿Recuerdas el día que nos conocimos por primera vez?<br />
+			<span class="comments">// El viernes de halloween?. </span><br />
+			Desde ese día comenzó una chispa;<br />
+			<span class="comments">// Tu cara, Tu voz, tu energia.</span><br />
+			Todo de ti se grabó dentro de mi cabeza y mi corazón;<br />
+			Despues paso el tiempo y hablabamos mucho;<br />
+			La conexión se hizo más y más fuerte y bonita;<br />
+			Se que a habido altibajos y muchas veces he querido rendirme;<br />
+			Pero yo siempre he sabido que nosotros estamos destinados a contruir algo grande juntos;<br />
+			Ha habido peleas;<br />
+			<span class="comments">// Y estoy seguro de que habrá más.</span><br />
+			Pero nuestro vínculo siempre volverá a crecer más fuerte;<br />
+			<br>
+			<br>
+			A lo que quiero llegar es que:<br />
+			Mi niña, te amaré para siempre;<br />
+			<br>
+			<br>
+			Ahora si es que en verdad me amas toca el corazon de abajo.<br />
+			<br>
+			<span id="heartspan">
+			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					AUDRY X ALAN POR SIEMPRE
+					<div id="elapseClock"></div>
+					<div id="relationshipText">💕 Nuestro tiempo como novios 💕</div>
+				</div>
+				<div id="loveu">
+					TE AMO MUCHÍSIMO<br/>
+					<div class="signature">- ALAN</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2025, 3, 22); // 22 de abril de 2025 (mes 3 = abril, ya que enero = 0)
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "¡Tu navegador no soporta HTML5!<br/>Se recomienda usar Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
